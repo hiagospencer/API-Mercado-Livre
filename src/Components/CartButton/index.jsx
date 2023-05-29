@@ -4,7 +4,7 @@ import { Button, Span } from './styles';
 
 export default function index() {
   return (
-    <Button>
+    <Button href="/carrinho">
         <AiOutlineShoppingCart />
         <Span>1</Span>
     </Button>

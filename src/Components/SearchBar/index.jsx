@@ -1,25 +1,25 @@
-import {useState} from 'react';
-
-import fetchProducts from '../../api/fetchProducts';
+import { useContext } from 'react';
 
 import { BsSearch } from 'react-icons/bs';
 
 import { Button, Form, Input } from './styles';
 
+import valueContext from '../../Contexts/ValueContext';
+
+
+
 export default function index() {
 
-  const [ value, setValue] = useState('');
+  const {value, setValue} = useContext(valueContext);
 
   const valueInput = (event) => {
     setValue(event.target.value)
-
   }
-  
+
   return (
     <Form>
         <Input
-          type="search"
-          value={value}
+          type="text"
           placeholder="Buscar produto"
           onChange={valueInput}
           required
