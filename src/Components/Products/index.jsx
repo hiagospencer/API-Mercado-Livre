@@ -2,7 +2,7 @@ import { useState, useEffect, useContext } from 'react';
 
 import api from '../../api/provider';
 
-import valueContext from '../../Contexts/ValueContext';
+import useAppContext from '../../Hook/useAppContext';
 
 import ProductCard from './ProductCard';
 
@@ -10,8 +10,9 @@ import { GridProducts } from './styles';
 
 
 export default function index() {
-  const {value} = useContext(valueContext)
+  const {value} = useAppContext()
   const [products, setProducts] = useState([]);
+  const [ cart, setCart] = useState([]);
 
 
   useEffect(()=>{
@@ -23,6 +24,8 @@ export default function index() {
       setProducts(response.data.results)
     })
   }
+
+
 
   return (
     <GridProducts className='container'>
