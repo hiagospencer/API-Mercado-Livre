@@ -1,14 +1,19 @@
+/* eslint-disable react-hooks/rules-of-hooks */
+import useAppContext from '../../../Hook/useAppContext';
 
 import { Title, BoxResume, ProductResume, FreteResume, TotalResume, Button } from './styles';
 
 export default function index() {
+
+  const { carTotal } = useAppContext()
+
   return (
     <>
       <Title><h3>Resumo da compra</h3></Title>
       <BoxResume>
         <ProductResume>
           <span>Produto</span>
-          <span>R$ 1500,00</span>
+          <span>R$ {carTotal}</span>
         </ProductResume>
 
         <FreteResume>
@@ -18,7 +23,7 @@ export default function index() {
 
         <TotalResume>
           <span>Total</span>
-          <span>R$ 1500,00</span></TotalResume>
+          <span>R$ {carTotal}</span></TotalResume>
         <Button>Continuar compra</Button>
       </BoxResume>
     </>

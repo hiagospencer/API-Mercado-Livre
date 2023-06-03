@@ -4,7 +4,8 @@ export const Container = styled.div`
     width: 100%;
     background-color: #ededed;
     padding-top: 120px;
-    height: 100vh;
+    height: auto;
+
 `;
 
 export const InfoCart = styled.div`
@@ -13,7 +14,7 @@ export const InfoCart = styled.div`
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
-    margin: 10px auto;
+    margin: 40px auto;
 
     @media screen and (max-width: 768px){
         flex-direction: column;
@@ -25,6 +26,7 @@ export const CartDescription = styled.div`
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     width: 70%;
+    margin-bottom: 50px ;
 
     @media screen and (max-width: 768px){
         width: 90%;
@@ -37,6 +39,7 @@ export const Summary = styled.div`
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     width: 27%;
+    padding: 20px 0;
     margin-bottom: 20px;
 
     @media screen and (max-width: 768px){

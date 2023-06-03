@@ -1,4 +1,5 @@
-import { useState, useEffect, useContext } from 'react';
+/* eslint-disable react-hooks/rules-of-hooks */
+import { useState, useEffect } from 'react';
 
 import api from '../../api/provider';
 
@@ -11,8 +12,8 @@ import { GridProducts } from './styles';
 
 export default function index() {
   const {value} = useAppContext()
+
   const [products, setProducts] = useState([]);
-  const [ cart, setCart] = useState([]);
 
 
   useEffect(()=>{
@@ -26,10 +27,10 @@ export default function index() {
   }
 
 
-
   return (
     <GridProducts className='container'>
       {products.map((product) => <ProductCard key={product.id} data={product} />)}
+
     </GridProducts>
   )
 }

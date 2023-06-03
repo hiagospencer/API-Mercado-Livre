@@ -1,31 +1,37 @@
-import { useContext } from 'react';
+/* eslint-disable react-hooks/rules-of-hooks */
 
 import { BsSearch } from 'react-icons/bs';
 
 import { Button, Form, Input } from './styles';
 
-import valueContext from '../../Contexts/ValueContext';
+import useAppContext from '../../Hook/useAppContext'
 
 
 
 export default function index() {
 
-  const {value, setValue} = useContext(valueContext);
+  const {value, setValue} = useAppContext();
 
   const valueInput = (event) => {
     setValue(event.target.value)
   }
 
+
+  const PreventDefault = (e) => {
+    e.preventDefault();
+    console.log(value)
+  }
+
   return (
-    <Form>
+    <Form action="">
         <Input
-          type="text"
+          type="search"
           placeholder="Buscar produto"
           onChange={valueInput}
           required
         />
 
-        <Button>
+        <Button type="submit" onClick={PreventDefault}>
             <BsSearch />
         </Button>
     </Form>

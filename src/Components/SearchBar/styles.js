@@ -29,4 +29,5 @@ export const Button = styled.button`
     justify-content: center;
     align-items: center;
     color: #333;
+    cursor: pointer;
 `;
