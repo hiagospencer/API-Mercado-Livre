@@ -11,7 +11,7 @@ export default function index() {
 
   const totalItensCart = cart.length
   return (
-    <Button href="/carrinho">
+    <Button href="API-Mercado-Livre/carrinho">
         <AiOutlineShoppingCart />
         <Span>{totalItensCart}</Span>
     </Button>
