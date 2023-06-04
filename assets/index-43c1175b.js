@@ -100,7 +100,7 @@ Error generating stack: `+i.message+`
     color: white;
     font-size: 11px;
     font-weight: 600;
-`;function vp(){const{cart:e}=nr(),t=e.length;return k.jsxs(ey,{href:"API-Mercado-Livre/carrinho",children:[k.jsx(e1,{}),k.jsx(ty,{children:t})]})}const ny=W.header`
+`;function vp(){const{cart:e}=nr(),t=e.length;return k.jsxs(ey,{href:"/carrinho",children:[k.jsx(e1,{}),k.jsx(ty,{children:t})]})}const ny=W.header`
     width: 100%;
     position: fixed;
     background-color: #fff159;
