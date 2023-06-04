@@ -1,4 +1,4 @@
-import  Header  from "../Header";
+import  HeaderCart  from "./HeaderCart";
 
 import DetailsCart from './DetailsCart';
 import ResumoCompra from './ResumoCompra';
@@ -8,7 +8,7 @@ import { Container,InfoCart, CartDescription, Summary, Product, Title, Frete } f
 export default function index() {
   return (
     <body style={{ background: '#ededed'}}>
-      <Header />
+      <HeaderCart />
       <Container>
         <InfoCart>
           <CartDescription>

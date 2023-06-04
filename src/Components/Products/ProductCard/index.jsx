@@ -14,24 +14,24 @@ import { ButtonCart, CardInfo, CardPrice, CardTitle, Container, Img } from './st
 
 export default function index({data }) {
   const { cart, setCart} = useAppContext()
-  const {price, title, thumbnail} = data;
 
 
-  const addCart = (obj) => {
-      const copyCart = [...cart]
+    const {price, title, thumbnail} = data;
+
+
+    const addCart = (obj) => {
       const element = cart.find((e) => e.id === obj.id)
+
 
       if(element){
         const arrFilter = cart.filter((e) => e.id !== obj.id)
-        arrFilter["quantity"] = 1
+
         setCart(arrFilter)
         setItem('carrinho', arrFilter)
 
       } else{
-        copyCart["quantity"] = 1
-        console.log(copyCart)
-        setCart([...copyCart, obj])
-        setItem('carrinho', [...copyCart, obj])
+         setCart([...cart, obj])
+         setItem('carrinho', [...cart, obj])
       }
 
     }
@@ -40,7 +40,7 @@ export default function index({data }) {
       <Container>
         <Img src={thumbnail.replace(/\w\.jpg/gi, 'W.jpg')} alt="notebook"/>
         <CardInfo>
-          <CardPrice>{formatCurrency(price, 'BRL')}</CardPrice>
+          <CardPrice>{formatCurrency(price)}</CardPrice>
           <CardTitle>{title}</CardTitle>
         </CardInfo>
 

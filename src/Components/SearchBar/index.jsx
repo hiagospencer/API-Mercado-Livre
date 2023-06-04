@@ -1,10 +1,11 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react-hooks/rules-of-hooks */
 
 import { BsSearch } from 'react-icons/bs';
 
 import { Button, Form, Input } from './styles';
 
-import useAppContext from '../../Hook/useAppContext'
+import useAppContext from '../../Hook/useAppContext';
 
 
 
@@ -19,7 +20,7 @@ export default function index() {
 
   const PreventDefault = (e) => {
     e.preventDefault();
-    console.log(value)
+
   }
 
   return (

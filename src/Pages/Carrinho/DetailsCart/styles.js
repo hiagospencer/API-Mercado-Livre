@@ -11,7 +11,7 @@ export const Table = styled.table`
   }
 
   td {
-    padding: 30px;
+    padding: 25px;
     color: #666;
   }
 
@@ -20,7 +20,7 @@ export const Table = styled.table`
     display: -webkit-box;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
-    max-width: 30ch;
+    max-width: 41ch;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;

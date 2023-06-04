@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react-hooks/rules-of-hooks */
 
 import useAppContext from '../../../Hook/useAppContext';
@@ -8,7 +9,7 @@ import { setItem } from '../../../service/LocalStorageFuncs';
 import { Button, Quantidade, Table } from './styles';
 
 export default function index() {
-  const { cart,setCart, quantity, setQuantity, setCartTotal } = useAppContext()
+  const { cart,setCart, setCartTotal } = useAppContext()
 
 
   const removeCart = (obj) => {
@@ -19,24 +20,8 @@ export default function index() {
 
   }
 
-  const updateQuantityProduct = ( action) => {
-
-    let newQuantity = 2
-
-
-    if ( action === 'decrease'){
-      if( newQuantity === 1) {
-        return;
-      }
-      newQuantity -= 1
-       setQuantity(newQuantity)
-    }
-
-    if ( action === 'increase' ){
-      newQuantity += 1
-       setQuantity(newQuantity)
-    }
-
+  const formatCurrency = (value) => {
+    return Intl.NumberFormat('pt-br', {style: 'currency', currency: 'BRL'}).format(value)
   }
 
   const getTotal = () => {
@@ -44,7 +29,7 @@ export default function index() {
     let sum = 0;
 
     for ( let item of cart){
-      sum += item.price * quantity
+      sum += item.price * 1
     }
     setCartTotal(sum)
     return sum;
@@ -80,24 +65,13 @@ export default function index() {
             <tr key={product.id}>
               <td><img src={product.thumbnail} alt='' width={60} /></td>
 
-              <td  colSpan='2'><p>{product.title}</p></td>
-
-              <td>
-                  <Quantidade>
-                      <Button
-                        onClick={() => updateQuantityProduct( 'decrease')}>-</Button>
-                        <span>{product.available_quantity}</span>
-
-                      <Button
-                      onClick={() => updateQuantityProduct('increase')}>+</Button>
-                  </Quantidade>
-              </td>
+              <td  colSpan='3'><p>{product.title}</p></td>
 
               <td onClick={() => removeCart(product)} >
                 < BsTrash style={{ cursor: 'pointer'}} />
               </td>
 
-              <td>R$ {product.price * quantity}</td>
+              <td>{formatCurrency(product.price)}</td>
             </tr>
           ))
           }

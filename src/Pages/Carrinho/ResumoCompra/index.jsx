@@ -1,19 +1,26 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import useAppContext from '../../../Hook/useAppContext';
 
+
 import { Title, BoxResume, ProductResume, FreteResume, TotalResume, Button } from './styles';
 
 export default function index() {
 
   const { carTotal } = useAppContext()
 
+  const total = Intl.NumberFormat('pt-br', {style: 'currency', currency: 'BRL'}).format(carTotal)
+
+  const comprarFinalizada = () => {
+    alert(`Compra no valor ${total}, finalizada com sucesso!`)
+  }
+
   return (
     <>
       <Title><h3>Resumo da compra</h3></Title>
       <BoxResume>
         <ProductResume>
-          <span>Produto</span>
-          <span>R$ {carTotal}</span>
+          <span>SubTotal</span>
+          <span>{total}</span>
         </ProductResume>
 
         <FreteResume>
@@ -23,8 +30,8 @@ export default function index() {
 
         <TotalResume>
           <span>Total</span>
-          <span>R$ {carTotal}</span></TotalResume>
-        <Button>Continuar compra</Button>
+          <span>{total}</span></TotalResume>
+        <Button onClick={() => comprarFinalizada()}>Continuar compra</Button>
       </BoxResume>
     </>
   )
