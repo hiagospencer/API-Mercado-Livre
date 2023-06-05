@@ -10,7 +10,7 @@ export function AppRoutes() {
         <Route path="/API-Mercado-Livre" element={<Main />} />
       </Routes>
       <Routes>
-        <Route path="/API-Mercado-Livre/carrinho/index.html" element={<Carrinho />} />
+        <Route path="/API-Mercado-Livre/carrinho" element={<Carrinho />} />
       </Routes>
       </>
     );
