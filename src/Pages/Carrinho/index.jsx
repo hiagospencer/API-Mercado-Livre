@@ -7,7 +7,7 @@ import { Container,InfoCart, CartDescription, Summary, Product, Title, Frete } f
 
 export default function index() {
   return (
-    <body style={{ background: '#ededed'}}>
+    <div style={{ background: '#ededed'}}>
       <HeaderCart />
       <Container>
         <InfoCart>
@@ -28,6 +28,6 @@ export default function index() {
           </Summary>
         </InfoCart>
       </Container>
-    </body>
+    </div>
   )
 }

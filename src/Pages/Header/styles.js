@@ -12,6 +12,7 @@ export const Header = styled.div`
     justify-content: space-between;
     align-items: center;
     padding: 20px;
+    gap: 10px;
 `;
 
 export const Logo = styled.div`
