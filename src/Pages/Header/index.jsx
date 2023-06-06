@@ -9,7 +9,7 @@ export default function index() {
   return (
     <Container>
         <Header className="container">
-          <Logo><Link to="/API-Mercado-Livre">HS</Link></Logo>
+          <Logo><Link to="/">HS</Link></Logo>
           <SearchBar />
           <CartButton />
         </Header>
